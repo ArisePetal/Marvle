@@ -35,3 +35,4 @@ fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/heroes.json')
     });
   })
   .catch(error => console.error('Error fetching data:', error));
+
