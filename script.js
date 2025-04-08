@@ -1,5 +1,5 @@
 // Fetch heroes data from GitHub
-fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/heroes.json')
+fetch('https://raw.githubusercontent.com/yourusername/yourrepositoryname/main/heroes.json')
   .then(response => response.json())
   .then(data => {
     // Pick a random hero from the data
@@ -20,6 +20,13 @@ fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/heroes.json')
     // Handle the guess submission
     document.getElementById("submitGuess").addEventListener("click", function() {
         const guess = document.getElementById("guessInput").value.trim().toLowerCase();
+        console.log("User's guess: ", guess);  // Debugging the user's input
+
+        if (!guess) {
+            alert("Please enter a guess!");
+            return;
+        }
+
         if (guess === randomHero.hero.toLowerCase()) {
             alert("Correct! Well done.");
         } else {
