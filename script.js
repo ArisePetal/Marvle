@@ -1,53 +1,35 @@
-let dailyHero;
-let heroesData = [];
-
-// Fetch data from JSON
-fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/data/heroes.json')
-  .then(response => response.json())
-  .then(data => {
-    heroesData = data;
-    dailyHero = heroesData[Math.floor(Math.random() * heroesData.length)];
-    console.log("Daily hero chosen. Waiting for guesses...");
-  })
-  .catch(error => console.error("Error fetching data:", error));
-
-// Handle guess submission
 function submitGuess() {
-  const guessInput = document.getElementById("guessInput");
-  const guess = guessInput.value.trim().toLowerCase();
+  const guess = document.getElementById('guessInput').value.toLowerCase();
+  const table = document.getElementById('guessesTable').getElementsByTagName('tbody')[0];
 
-  if (!guess) return;
+  // Fetch the hero data
+  fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/heroes.json')
+    .then(response => response.json())
+    .then(data => {
+      let foundHero = data.find(hero => hero.hero.toLowerCase() === guess);
 
-  // Find guessed hero
-  const guessedHero = heroesData.find(h => h.hero.toLowerCase() === guess);
+      if (foundHero) {
+        // Format first appearance date as "Month YYYY"
+        const date = new Date(foundHero.firstAppearance);
+        const options = { year: 'numeric', month: 'long' };
+        const formattedDate = date.toLocaleDateString('en-US', options); // e.g., "May 1989"
 
-  if (!guessedHero) {
-    alert("Hero not found. Please try again.");
-    return;
-  }
+        // Create a new row in the table with the hero's data
+        const newRow = table.insertRow();
+        newRow.insertCell(0).textContent = foundHero.hero;
+        newRow.insertCell(1).textContent = foundHero.role;
+        newRow.insertCell(2).textContent = foundHero.affiliation.join(', ');  // Affiliation (formatted as comma-separated)
+        newRow.insertCell(3).textContent = foundHero.teamUp.join(', ');  // Team-Up (formatted as comma-separated)
+        newRow.insertCell(4).textContent = formattedDate;  // First Appearance (formatted date)
+      } else {
+        alert("Hero not found!");
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
+}
 
-  // Add guessed hero to the table
-  const table = document.getElementById("guessesTable").getElementsByTagName('tbody')[0];
-  const row = table.insertRow();
-
-  // Create columns: Hero, Role, Affiliations, TeamUps, First Appearance
-  const heroCell = row.insertCell();
-  const roleCell = row.insertCell();
-  const affiliationCell = row.insertCell();
-  const teamUpCell = row.insertCell();
-  const appearanceCell = row.insertCell();
-
-  heroCell.textContent = guessedHero.hero;
-  roleCell.textContent = guessedHero.role;
-  affiliationCell.textContent = guessedHero.affiliation.join(", ");
-  teamUpCell.textContent = guessedHero.teamUp.join(", ");
-  appearanceCell.textContent = guessedHero.firstAppearance;
-
-  // Style row if correct
-  if (guessedHero.hero.toLowerCase() === dailyHero.hero.toLowerCase()) {
-    row.style.backgroundColor = "lightgreen";
-    alert("🎉 You guessed the correct hero!");
-  }
 
   guessInput.value = "";
 }
