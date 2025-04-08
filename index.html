@@ -1,40 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvel Heroes Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Marvel Heroes Guessing Game</h1>
-        <p>Guess the hero based on the information provided!</p>
-    </header>
-    
-    <section>
-        <input type="text" id="guessInput" placeholder="Enter your guess...">
-        <button id="submitGuess">Submit Guess</button>
-    </section>
+<input type="text" id="guessInput" placeholder="Enter your guess">
+<button onclick="submitGuess()">Submit Guess</button>
 
-    <table>
-        <tr>
-            <th>Hero</th>
-            <th>Role</th>
-            <th>Affiliation</th>
-            <th>First Appearance</th>
-            <th>Team Up</th>
-        </tr>
-        <tr>
-            <td id="heroName"></td>
-            <td id="heroRole"></td>
-            <td id="heroAffiliation"></td>
-            <td id="heroFirstAppearance"></td>
-            <td id="heroTeamUp"></td>
-        </tr>
-    </table>
-
-    <script src="script.js"></script>
-</body>
-</html>
-
+<table id="guessesTable">
+  <thead>
+    <tr>
+      <th>Hero</th>
+      <th>Role</th>
+      <th>Affiliation</th>
+      <th>Team-Up</th>
+      <th>First Appearance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Guesses will be inserted here -->
+  </tbody>
+</table>
