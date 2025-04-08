@@ -3,7 +3,7 @@ function submitGuess() {
   const table = document.getElementById('guessesTable').getElementsByTagName('tbody')[0];
 
   // Fetch the hero data
-  fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/heroes.json')
+  fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/data/heroes.json')
     .then(response => response.json())
     .then(data => {
       let foundHero = data.find(hero => hero.hero.toLowerCase() === guess);
