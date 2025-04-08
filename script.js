@@ -1,6 +1,17 @@
 function submitGuess() {
   const guess = document.getElementById('guessInput').value.toLowerCase();
   const table = document.getElementById('guessesTable').getElementsByTagName('tbody')[0];
+  const guessInput = document.getElementById('guessInput'); // Get the input box
+
+  // Check if the guess has already been made
+  const rows = table.getElementsByTagName('tr');
+  for (let row of rows) {
+    const heroCell = row.cells[0].textContent.toLowerCase();
+    if (heroCell === guess) {
+      alert("You've already guessed this hero!");
+      return;
+    }
+  }
 
   // Fetch the hero data
   fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/data/heroes.json')
@@ -9,6 +20,14 @@ function submitGuess() {
       let foundHero = data.find(hero => hero.hero.toLowerCase() === guess);
 
       if (foundHero) {
+        // Compare the roles, and highlight the input box if the role matches
+        const correctHeroRole = foundHero.role.toLowerCase();
+        if (correctHeroRole === 'vanguard' && guessInput.value.toLowerCase() === 'vanguard') {
+          guessInput.style.backgroundColor = 'lightgreen';  // Green for role match
+        } else {
+          guessInput.style.backgroundColor = 'lightcoral';  // Red for incorrect role
+        }
+
         // Format first appearance date as "Month YYYY"
         const date = new Date(foundHero.firstAppearance);
         const options = { year: 'numeric', month: 'long' };
@@ -22,6 +41,7 @@ function submitGuess() {
         newRow.insertCell(3).textContent = foundHero.teamUp.join(', ');  // Team-Up (formatted as comma-separated)
         newRow.insertCell(4).textContent = formattedDate;  // First Appearance (formatted date)
       } else {
+        guessInput.style.backgroundColor = 'lightcoral';  // Red for incorrect guess
         alert("Hero not found!");
       }
     })
@@ -29,4 +49,3 @@ function submitGuess() {
       console.error('Error fetching data:', error);
     });
 }
-
