@@ -1,36 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marvel Rivals Game</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://apis.google.com/js/api.js"></script>
-</head>
-<body>
-    <h1>Marvel Rivals Game</h1>
+<input type="text" id="guess-input" placeholder="Enter your guess" />
+<button id="submit-guess">Submit Guess</button>
 
-    <!-- Input bar for guesses -->
-    <div>
-        <input type="text" id="guess-input" placeholder="Guess the hero's name">
-        <button onclick="checkGuess()">Submit Guess</button>
-    </div>
+<table id="heroes-table">
+    <thead>
+        <tr>
+            <th>Hero</th>
+            <th>Role</th>
+            <th>Affiliation</th>
+            <th>Team-Up</th>
+            <th>First Appearance</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data rows will be dynamically inserted here -->
+    </tbody>
+</table>
 
-    <!-- Table to display hero information -->
-    <table id="heroes-table">
-        <thead>
-            <tr>
-                <th>Hero</th>
-                <th>Role</th>
-                <th>Affiliation</th>
-                <th>Team-Up</th>
-                <th>First Appearance</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Hero info will be populated here -->
-        </tbody>
-    </table>
 
     <script src="script.js"></script>
 </body>
