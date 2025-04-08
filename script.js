@@ -4,6 +4,13 @@ function submitGuess() {
 
   const table = document.getElementById('guessesTable').getElementsByTagName('tbody')[0];
 
+  // Check if the hero has already been added to the table
+  const existingHero = Array.from(table.rows).some(row => row.cells[0].textContent.toLowerCase() === guess);
+  if (existingHero) {
+    alert("This hero has already been guessed!");
+    return; // Exit the function if the hero has already been guessed
+  }
+
   fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/data/heroes.json')
     .then(response => response.json())
     .then(data => {
@@ -29,5 +36,3 @@ function submitGuess() {
       console.error('Error fetching data:', error);
     });
 }
-
-
