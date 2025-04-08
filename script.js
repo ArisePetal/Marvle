@@ -1,6 +1,7 @@
 function submitGuess() {
-  const guess = document.getElementById('guessInput').value.toLowerCase();
+  const guess = document.getElementById('guessInput').value.trim().toLowerCase();  // Trim input to avoid leading/trailing spaces
   const table = document.getElementById('guessesTable').getElementsByTagName('tbody')[0];
+  const guessInput = document.getElementById('guessInput'); // Get the input box
 
   // Check if the guess has already been made
   const rows = table.getElementsByTagName('tr');
@@ -16,9 +17,24 @@ function submitGuess() {
   fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/data/heroes.json')
     .then(response => response.json())
     .then(data => {
-      let foundHero = data.find(hero => hero.hero.toLowerCase() === guess);
+      // Log data and guess for debugging
+      console.log("Guess entered: ", guess);
+      console.log("Data from JSON: ", data);
+
+      // Find the hero in the JSON file
+      let foundHero = data.find(hero => hero.hero.toLowerCase().trim() === guess);
 
       if (foundHero) {
+        console.log("Hero found: ", foundHero);  // Log the found hero for debugging
+
+        // Compare the roles, and highlight the input box if the role matches
+        const correctHeroRole = foundHero.role.toLowerCase();
+        if (guessInput.value.toLowerCase() === correctHeroRole) {
+          guessInput.style.backgroundColor = 'lightgreen';  // Green for role match
+        } else {
+          guessInput.style.backgroundColor = 'lightcoral';  // Red for incorrect role
+        }
+
         // Format first appearance date as "Month YYYY"
         const date = new Date(foundHero.firstAppearance);
         const options = { year: 'numeric', month: 'long' };
@@ -32,6 +48,7 @@ function submitGuess() {
         newRow.insertCell(3).textContent = foundHero.teamUp.join(', ');  // Team-Up (formatted as comma-separated)
         newRow.insertCell(4).textContent = formattedDate;  // First Appearance (formatted date)
       } else {
+        guessInput.style.backgroundColor = 'lightcoral';  // Red for incorrect guess
         alert("Hero not found!");
       }
     })
