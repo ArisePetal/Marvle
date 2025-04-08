@@ -1,0 +1,233 @@
+[
+    {
+        "hero": "Adam Warlock",
+        "role": "Strategist",
+        "affiliation": ["Guardians of the Galaxy"],
+        "firstAppearance": "1974-06-01",
+        "teamUp": ["Mantis", "Star-Lord"]
+    },
+    {
+        "hero": "Black Widow",
+        "role": "Duelist",
+        "affiliation": ["Avengers", "Marvel Knights", "Red Room", "S.H.I.E.L.D"],
+        "firstAppearance": "1964-01-01",
+        "teamUp": ["Hawkeye"]
+    },
+    {
+        "hero": "Captain America",
+        "role": "Vanguard",
+        "affiliation": ["Avengers", "S.H.I.E.L.D"],
+        "firstAppearance": "1940-12-01",
+        "teamUp": ["Storm", "Thor"]
+    },
+    {
+        "hero": "Cloak & Dagger",
+        "role": "Strategist",
+        "affiliation": ["X-Men", "New Warriors", "Secret Defenders", "Secret Avengers", "Marvel Knights"],
+        "firstAppearance": "1982-03-01",
+        "teamUp": ["Moon Knight"]
+    },
+    {
+        "hero": "Doctor Strange",
+        "role": "Vanguard",
+        "affiliation": ["Avengers", "Illuminati", "Defenders", "Midnight Sons"],
+        "firstAppearance": "1963-07-01",
+        "teamUp": ["Hulk", "Iron Man"]
+    },
+    {
+        "hero": "Groot",
+        "role": "Vanguard",
+        "affiliation": ["Guardians of the Galaxy"],
+        "firstAppearance": "1960-11-01",
+        "teamUp": ["Jeff the Land Shark", "Rocket Raccoon"]
+    },
+    {
+        "hero": "Hawkeye",
+        "role": "Duelist",
+        "affiliation": ["Avengers", "S.H.I.E.L.D"],
+        "firstAppearance": "1964-09-01",
+        "teamUp": ["Black Widow"]
+    },
+    {
+        "hero": "Hela",
+        "role": "Duelist",
+        "affiliation": ["Gods of Asgard"],
+        "firstAppearance": "1964-03-01",
+        "teamUp": ["Loki", "Thor"]
+    },
+    {
+        "hero": "Hulk",
+        "role": "Vanguard",
+        "affiliation": ["Avengers", "Defenders"],
+        "firstAppearance": "1962-05-01",
+        "teamUp": ["Doctor Strange", "Iron Man", "Wolverine", "The Thing"]
+    },
+    {
+        "hero": "Human Torch",
+        "role": "Duelist",
+        "affiliation": ["Fantastic Four"],
+        "firstAppearance": "1961-11-01",
+        "teamUp": ["Invisible Woman", "Mister Fantastic", "The Thing", "Storm"]
+    },
+    {
+        "hero": "Iron Fist",
+        "role": "Duelist",
+        "affiliation": ["Agents of Atlas"],
+        "firstAppearance": "2018-05-01",
+        "teamUp": ["Luna Snow"]
+    },
+    {
+        "hero": "Jeff the Land Shark",
+        "role": "Strategist",
+        "affiliation": ["West Coast Avengers (formerly)"],
+        "firstAppearance": "2019-01-01",
+        "teamUp": ["Luna Snow", "Namor", "Groot", "Rocket Raccoon"]
+    },
+    {
+        "hero": "Luna Snow",
+        "role": "Strategist",
+        "affiliation": ["Agents of Atlas"],
+        "firstAppearance": "2018-01-01",
+        "teamUp": ["Jeff the Land Shark", "Namor", "Iron Fist"]
+    },
+    {
+        "hero": "Magik",
+        "role": "Duelist",
+        "affiliation": ["X-Men"],
+        "firstAppearance": "1975-05-01",
+        "teamUp": ["Black Panther", "Psylocke"]
+    },
+    {
+        "hero": "Magneto",
+        "role": "Vanguard",
+        "affiliation": ["X-Men", "Brotherhood of Mutants (formerly)"],
+        "firstAppearance": "1963-07-01",
+        "teamUp": ["Scarlet Witch"]
+    },
+    {
+        "hero": "Mantis",
+        "role": "Strategist",
+        "affiliation": ["Guardians of the Galaxy"],
+        "firstAppearance": "1973-06-01",
+        "teamUp": ["Adam Warlock", "Star-Lord"]
+    },
+    {
+        "hero": "Mister Fantastic",
+        "role": "Duelist",
+        "affiliation": ["Fantastic Four", "Illuminati"],
+        "firstAppearance": "1961-11-01",
+        "teamUp": ["Invisible Woman", "The Thing", "Human Torch"]
+    },
+    {
+        "hero": "Moon Knight",
+        "role": "Duelist",
+        "affiliation": ["Marvel Knights", "Midnight Sons"],
+        "firstAppearance": "1975-08-01",
+        "teamUp": ["Cloak & Dagger"]
+    },
+    {
+        "hero": "Namor",
+        "role": "Duelist",
+        "affiliation": ["Illuminati", "Defenders", "Invaders", "X-Men"],
+        "firstAppearance": "1939-01-01",
+        "teamUp": ["Luna Snow"]
+    },
+    {
+        "hero": "Peni Parker",
+        "role": "Vanguard",
+        "affiliation": ["Oscorp", "Parker Industries", "Spider-Society", "Spider-Army (formerly)"],
+        "firstAppearance": "2014-10-01",
+        "teamUp": ["Spider-Man", "Venom"]
+    },
+    {
+        "hero": "Psylocke",
+        "role": "Duelist",
+        "affiliation": ["X-Men"],
+        "firstAppearance": "2021-03-01",
+        "teamUp": ["Magik", "Black Panther"]
+    },
+    {
+        "hero": "Rocket Raccoon",
+        "role": "Strategist",
+        "affiliation": ["Guardians of the Galaxy"],
+        "firstAppearance": "1982-02-01",
+        "teamUp": ["Groot", "Jeff the Land Shark", "The Punisher", "Winter Soldier"]
+    },
+    {
+        "hero": "Scarlet Witch",
+        "role": "Duelist",
+        "affiliation": ["Avengers", "Brotherhood of Mutants (formerly)"],
+        "firstAppearance": "1964-03-01",
+        "teamUp": ["Magneto"]
+    },
+    {
+        "hero": "Spider-Man",
+        "role": "Duelist",
+        "affiliation": ["Web-Warriors", "The Daily Bugle"],
+        "firstAppearance": "1962-08-01",
+        "teamUp": ["Squirrel Girl", "Peni Parker", "Venom"]
+    },
+    {
+        "hero": "Squirrel Girl",
+        "role": "Duelist",
+        "affiliation": ["Squirrel Avengers Initiative"],
+        "firstAppearance": "1991-11-01",
+        "teamUp": ["Spider-Man"]
+    },
+    {
+        "hero": "Star-Lord",
+        "role": "Duelist",
+        "affiliation": ["Guardians of the Galaxy"],
+        "firstAppearance": "2004-03-01",
+        "teamUp": ["Mantis", "Adam Warlock"]
+    },
+    {
+        "hero": "Storm",
+        "role": "Duelist",
+        "affiliation": ["X-Men"],
+        "firstAppearance": "1975-05-01",
+        "teamUp": ["Captain America", "Thor", "Human Torch"]
+    },
+    {
+        "hero": "The Invisible Woman",
+        "role": "Strategist",
+        "affiliation": ["Fantastic Four"],
+        "firstAppearance": "1961-11-01",
+        "teamUp": ["Mister Fantastic", "Human Torch", "The Thing"]
+    },
+    {
+        "hero": "The Punisher",
+        "role": "Duelist",
+        "affiliation": ["Marvel Knights", "Thunderbolts"],
+        "firstAppearance": "1974-02-01",
+        "teamUp": ["Rocket Raccoon", "Winter Soldier"]
+    },
+    {
+        "hero": "The Thing",
+        "role": "Vanguard",
+        "affiliation": ["Fantastic Four"],
+        "firstAppearance": "1961-11-01",
+        "teamUp": ["Invisible Woman", "Mister Fantastic", "Human Torch", "Wolverine", "Hulk"]
+    },
+    {
+        "hero": "Thor",
+        "role": "Vanguard",
+        "affiliation": ["Avengers"],
+        "firstAppearance": "1962-08-01",
+        "teamUp": ["Hela", "Loki", "Captain America", "Storm"]
+    },
+    {
+        "hero": "Venom",
+        "role": "Vanguard",
+        "affiliation": ["Daily Bugle (formerly)"],
+        "firstAppearance": "1988-05-01",
+        "teamUp": ["Peni Parker", "Spider-Man"]
+    },
+    {
+        "hero": "Winter Soldier",
+        "role": "Duelist",
+        "affiliation": ["HYDRA (formerly)", "Invaders"],
+        "firstAppearance": "1941-03-01",
+        "teamUp": ["The Punisher", "Rocket Raccoon"]
+    }
+]
