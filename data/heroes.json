@@ -6,10 +6,10 @@
         "firstAppearance": "1974-06-01",
         "teamUp": ["Mantis", "Star-Lord"]
     },
-        {
+    {
         "hero": "Black Panther",
         "role": "Duelist",
-        "affiliation": ["Intergalactic Empire of Wakanda", "Avengers","Illuminati"],
+        "affiliation": ["Intergalactic Empire of Wakanda", "Avengers", "Illuminati"],
         "firstAppearance": "1966-01-01",
         "teamUp": ["Magik"]
     },
@@ -83,12 +83,12 @@
         "firstAppearance": "2018-05-01",
         "teamUp": ["Luna Snow"]
     },
-        {
+    {
         "hero": "Iron Man",
         "role": "Duelist",
-        "affiliation": ["Avengers", "Illuminati","Stark Industries"],
+        "affiliation": ["Avengers", "Illuminati", "Stark Industries"],
         "firstAppearance": "1962-12-01",
-        "teamUp": ["Doctor Strange","Hulk"]
+        "teamUp": ["Doctor Strange", "Hulk"]
     },
     {
         "hero": "Jeff the Land Shark",
@@ -98,11 +98,11 @@
         "teamUp": ["Luna Snow", "Namor", "Groot", "Rocket Raccoon"]
     },
     {
-  "hero": "Loki",
-  "role": "Strategist",
-  "affiliation": ["Frost Giants"],
-  "firstAppearance": "1962-10-01",
-  "teamUp": ["Hela", "Thor"]
+        "hero": "Loki",
+        "role": "Strategist",
+        "affiliation": ["Frost Giants"],
+        "firstAppearance": "1962-10-01",
+        "teamUp": ["Hela", "Thor"]
     },
     {
         "hero": "Luna Snow",
@@ -250,13 +250,13 @@
         "affiliation": ["HYDRA (formerly)", "Invaders"],
         "firstAppearance": "1941-03-01",
         "teamUp": ["The Punisher", "Rocket Raccoon"]
-    }
+    },
     {
-      "hero": "Wolverine",
-      "role": "Vanguard",
-      "affiliation": ["X-Men"],
-      "firstAppearance": "1974-10-01",
-      "teamUp": ["Hulk", "The Thing"]
+        "hero": "Wolverine",
+        "role": "Vanguard",
+        "affiliation": ["X-Men"],
+        "firstAppearance": "1974-10-01",
+        "teamUp": ["Hulk", "The Thing"]
     }
-    
 ]
+
