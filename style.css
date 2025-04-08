@@ -1,77 +1,38 @@
-const apiKey = AIzaSyBB6jZf6-3pS0I4WSxNIII6VnDUjf05Qs4;  // Replace with your actual API key
-const sheetId = 1Jf-l0F4Db3cPKXMZyXh0XDTnE0EnFMAm5-5K3rGbzZc;  // Replace with your Google Sheets ID
-const range = 'Sheet1!B1:B14';  // Adjusted range to include hero data
-
-// Fetch data from Google Sheets using the API key
-function fetchSheetData() {
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
-
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            const heroData = data.values;
-            const selectedHero = selectRandomHero(heroData);  // Randomly select a hero
-            console.log('Today\'s hero:', selectedHero);
-            displayHeroInTable(selectedHero);
-        })
-        .catch(error => console.error('Error fetching data:', error));
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
 }
 
-// Function to randomly select a hero
-function selectRandomHero(heroes) {
-    const randomIndex = Math.floor(Math.random() * heroes.length);
-    return heroes[randomIndex];  // Returns the randomly selected hero
+header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-// Function to display the selected hero's data in the table
-function displayHeroInTable(hero) {
-    const tableBody = document.getElementById("heroes-table").getElementsByTagName("tbody")[0];
-    const row = tableBody.insertRow();  // Insert a new row
-
-    // Insert cells into the row
-    const heroCell = row.insertCell(0);
-    const roleCell = row.insertCell(1);
-    const affiliationCell = row.insertCell(2);
-    const teamUpCell = row.insertCell(3);
-    const firstAppearanceCell = row.insertCell(4);
-
-    // Gather affiliations (Rows 3-8) and team-ups (Rows 10-14) for the hero
-    const affiliations = [];
-    for (let i = 2; i <= 7; i++) {
-        if (hero[i]) {
-            affiliations.push(hero[i]);
-        }
-    }
-
-    const teamUps = [];
-    for (let i = 9; i <= 13; i++) {
-        if (hero[i]) {
-            teamUps.push(hero[i]);
-        }
-    }
-
-    // Display the hero's data in the table
-    heroCell.textContent = hero[0];  // Hero's name
-    roleCell.textContent = hero[1];  // Role
-    affiliationCell.textContent = affiliations.join(', ');  // Join affiliations into a single string
-    teamUpCell.textContent = teamUps.join(', ');  // Join team-ups into a single string
-    firstAppearanceCell.textContent = hero[8];  // First appearance
+input {
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
 }
 
-// Function to check if the guess is correct
-function checkGuess() {
-    const guess = document.getElementById("guess-input").value.toLowerCase();
-    const selectedHero = document.getElementById("heroes-table").rows[1]?.cells[0]?.textContent.toLowerCase();  // Get selected hero's name from the table
-
-    if (guess === selectedHero) {
-        alert("Correct! Well done!");
-    } else {
-        alert("Incorrect guess! Try again.");
-    }
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-// Fetch the data when the page loads
-window.onload = function() {
-    fetchSheetData();
-};
+table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
 
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
