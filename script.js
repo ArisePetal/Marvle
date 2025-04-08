@@ -11,6 +11,9 @@ function submitGuess() {
     return; // Exit the function if the hero has already been guessed
   }
 
+  // Display the current guess (hero) on the top left of the screen
+  document.getElementById('currentAnswer').textContent = guess;
+
   fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/data/heroes.json')
     .then(response => response.json())
     .then(data => {
@@ -67,3 +70,4 @@ function submitGuess() {
       console.error('Error fetching data:', error);
     });
 }
+
