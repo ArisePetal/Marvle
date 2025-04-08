@@ -20,13 +20,8 @@ function submitGuess() {
       let foundHero = data.find(hero => hero.hero.toLowerCase() === guess);
 
       if (foundHero) {
-        // Compare the roles, and highlight the input box if the role matches
-        const correctHeroRole = foundHero.role.toLowerCase();
-        if (correctHeroRole === 'vanguard' && guessInput.value.toLowerCase() === 'vanguard') {
-          guessInput.style.backgroundColor = 'lightgreen';  // Green for role match
-        } else {
-          guessInput.style.backgroundColor = 'lightcoral';  // Red for incorrect role
-        }
+        // Change input box color to green for correct guess
+        guessInput.style.backgroundColor = 'lightgreen';
 
         // Format first appearance date as "Month YYYY"
         const date = new Date(foundHero.firstAppearance);
@@ -41,7 +36,8 @@ function submitGuess() {
         newRow.insertCell(3).textContent = foundHero.teamUp.join(', ');  // Team-Up (formatted as comma-separated)
         newRow.insertCell(4).textContent = formattedDate;  // First Appearance (formatted date)
       } else {
-        guessInput.style.backgroundColor = 'lightcoral';  // Red for incorrect guess
+        // Change input box color to red for incorrect guess
+        guessInput.style.backgroundColor = 'lightcoral';
         alert("Hero not found!");
       }
     })
