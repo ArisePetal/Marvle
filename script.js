@@ -1,38 +1,53 @@
-// Fetch heroes data from GitHub
+let dailyHero;
+let heroesData = [];
+
+// Fetch data from JSON
 fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/data/heroes.json')
   .then(response => response.json())
   .then(data => {
-    // Pick a random hero from the data
-    const randomHero = data[Math.floor(Math.random() * data.length)];
-
-    // Display the hero's information in the table
-    function displayHero(hero) {
-        document.getElementById("heroName").textContent = hero.hero;
-        document.getElementById("heroRole").textContent = hero.role;
-        document.getElementById("heroAffiliation").textContent = hero.affiliation.join(", ");
-        document.getElementById("heroFirstAppearance").textContent = hero.firstAppearance;
-        document.getElementById("heroTeamUp").textContent = hero.teamUp.join(", ");
-    }
-
-    // Initially display the hero
-    displayHero(randomHero);
-
-    // Handle the guess submission
-    document.getElementById("submitGuess").addEventListener("click", function() {
-        const guess = document.getElementById("guessInput").value.trim().toLowerCase();
-        console.log("User's guess: ", guess);  // Debugging the user's input
-
-        if (!guess) {
-            alert("Please enter a guess!");
-            return;
-        }
-
-        if (guess === randomHero.hero.toLowerCase()) {
-            alert("Correct! Well done.");
-        } else {
-            alert("Oops, that's not correct. Try again!");
-        }
-    });
+    heroesData = data;
+    dailyHero = heroesData[Math.floor(Math.random() * heroesData.length)];
+    console.log("Daily hero chosen. Waiting for guesses...");
   })
-  .catch(error => console.error('Error fetching data:', error));
+  .catch(error => console.error("Error fetching data:", error));
 
+// Handle guess submission
+function submitGuess() {
+  const guessInput = document.getElementById("guessInput");
+  const guess = guessInput.value.trim().toLowerCase();
+
+  if (!guess) return;
+
+  // Find guessed hero
+  const guessedHero = heroesData.find(h => h.hero.toLowerCase() === guess);
+
+  if (!guessedHero) {
+    alert("Hero not found. Please try again.");
+    return;
+  }
+
+  // Add guessed hero to the table
+  const table = document.getElementById("guessesTable").getElementsByTagName('tbody')[0];
+  const row = table.insertRow();
+
+  // Create columns: Hero, Role, Affiliations, TeamUps, First Appearance
+  const heroCell = row.insertCell();
+  const roleCell = row.insertCell();
+  const affiliationCell = row.insertCell();
+  const teamUpCell = row.insertCell();
+  const appearanceCell = row.insertCell();
+
+  heroCell.textContent = guessedHero.hero;
+  roleCell.textContent = guessedHero.role;
+  affiliationCell.textContent = guessedHero.affiliation.join(", ");
+  teamUpCell.textContent = guessedHero.teamUp.join(", ");
+  appearanceCell.textContent = guessedHero.firstAppearance;
+
+  // Style row if correct
+  if (guessedHero.hero.toLowerCase() === dailyHero.hero.toLowerCase()) {
+    row.style.backgroundColor = "lightgreen";
+    alert("🎉 You guessed the correct hero!");
+  }
+
+  guessInput.value = "";
+}
