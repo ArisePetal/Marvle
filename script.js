@@ -1,7 +1,6 @@
 function submitGuess() {
   const guess = document.getElementById('guessInput').value.toLowerCase();
   const table = document.getElementById('guessesTable').getElementsByTagName('tbody')[0];
-  const guessInput = document.getElementById('guessInput'); // Get the input box
 
   // Check if the guess has already been made
   const rows = table.getElementsByTagName('tr');
@@ -20,9 +19,6 @@ function submitGuess() {
       let foundHero = data.find(hero => hero.hero.toLowerCase() === guess);
 
       if (foundHero) {
-        // Change input box color to green for correct guess
-        guessInput.style.backgroundColor = 'lightgreen';
-
         // Format first appearance date as "Month YYYY"
         const date = new Date(foundHero.firstAppearance);
         const options = { year: 'numeric', month: 'long' };
@@ -36,8 +32,6 @@ function submitGuess() {
         newRow.insertCell(3).textContent = foundHero.teamUp.join(', ');  // Team-Up (formatted as comma-separated)
         newRow.insertCell(4).textContent = formattedDate;  // First Appearance (formatted date)
       } else {
-        // Change input box color to red for incorrect guess
-        guessInput.style.backgroundColor = 'lightcoral';
         alert("Hero not found!");
       }
     })
