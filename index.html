@@ -1,17 +1,71 @@
-<input type="text" id="guessInput" placeholder="Enter your guess">
-<button onclick="submitGuess()">Submit Guess</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marvle</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
 
-<table id="guessesTable">
-  <thead>
-    <tr>
-      <th>Hero</th>
-      <th>Role</th>
-      <th>Affiliation</th>
-      <th>Team-Up</th>
-      <th>First Appearance</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- Guesses will be inserted here -->
-  </tbody>
-</table>
+    h1 {
+      text-align: center;
+    }
+
+    #guessInput {
+      width: 250px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      margin-left: 5px;
+    }
+
+    table {
+      margin-top: 20px;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #eee;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Marvle</h1>
+
+  <input type="text" id="guessInput" placeholder="Enter your guess">
+  <button onclick="submitGuess()">Submit Guess</button>
+
+  <table id="guessesTable">
+    <thead>
+      <tr>
+        <th>Hero</th>
+        <th>Role</th>
+        <th>Affiliation</th>
+        <th>Team-Up</th>
+        <th>First Appearance</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Guesses will be added here -->
+    </tbody>
+  </table>
+
+  <!-- Link your script.js at the end -->
+  <script src="script.js"></script>
+</body>
+</html>
