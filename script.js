@@ -64,12 +64,25 @@ function colorCells(row, guessedHero) {
 
   // Check for exact matches (green), partial matches (orange), or no matches (red)
   function colorCell(cell, value, correctValue) {
-    if (value === correctValue) {
-      cell.style.backgroundColor = 'green'; // Exact match
-    } else if (correctValue.some(val => value.includes(val))) {
-      cell.style.backgroundColor = 'orange'; // Partial match
+    // Check if it's an exact match for role (simple string comparison)
+    if (Array.isArray(value) && Array.isArray(correctValue)) {
+      // For arrays like affiliation or teamUp, compare array values
+      if (value.length === correctValue.length && value.every((v, i) => v === correctValue[i])) {
+        cell.style.backgroundColor = 'green'; // Exact match
+      } else if (value.some(v => correctValue.includes(v))) {
+        cell.style.backgroundColor = 'orange'; // Partial match
+      } else {
+        cell.style.backgroundColor = 'red'; // No match
+      }
     } else {
-      cell.style.backgroundColor = 'red'; // No match
+      // For simple string values (role or exact match comparison)
+      if (value === correctValue) {
+        cell.style.backgroundColor = 'green'; // Exact match
+      } else if (correctValue.some(val => value.includes(val))) {
+        cell.style.backgroundColor = 'orange'; // Partial match
+      } else {
+        cell.style.backgroundColor = 'red'; // No match
+      }
     }
   }
 
