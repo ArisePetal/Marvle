@@ -1,5 +1,5 @@
 // Fetch heroes data from GitHub
-fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/heroes.json')
+fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/data/heroes.json')
   .then(response => response.json())
   .then(data => {
     // Pick a random hero from the data
