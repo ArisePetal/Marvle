@@ -1,62 +1,62 @@
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #f4f4f4;
-  }
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+  font-size: 20px; /* Increased font size */
+}
 
-  h1 {
-    text-align: center;
-  }
+h1 {
+  text-align: center;
+  font-size: 32px;
+}
 
-  #guessInput {
-    width: 250px;
-    padding: 10px;
-    font-size: 16px;
-  }
+#guessInput {
+  width: 300px;
+  padding: 15px;
+  font-size: 20px;
+}
 
-  button {
-    padding: 10px 15px;
-    font-size: 16px;
-    margin-left: 5px;
-  }
+button {
+  padding: 15px 20px;
+  font-size: 20px;
+  margin-left: 5px;
+}
 
-  table {
-    margin-top: 20px;
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; /* Ensures all columns have equal width */
-  }
+table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
 
-  th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-    width: 20%; /* Equal width for each of the 5 columns */
-    word-wrap: break-word; /* Handles long content nicely */
-  }
+th, td {
+  width: 20%;
+  height: 100px; /* Fixed height to make cells square-ish */
+  border: 1px solid #ccc;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+  word-wrap: break-word;
+}
 
-  th {
-    background-color: #eee;
-  }
+th {
+  background-color: #eee;
+}
 
-  /* Style for the current hero answer display */
-  #answerDisplay {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px;
-  }
+#answerDisplay {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px;
+}
 
-  /* Style for the message below the table */
-  #message {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    color: green;
-  }
-</style>
+#message {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: green;
+}
