@@ -41,7 +41,20 @@
     th {
       background-color: #eee;
     }
+table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* This ensures equal column widths */
+}
 
+th, td {
+  width: 20%; /* Each of the 5 columns gets 20% of the table width */
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  word-wrap: break-word; /* Prevent overflow */
+}
     /* Style for the current hero answer display */
     #answerDisplay {
       position: fixed;
