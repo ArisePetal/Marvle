@@ -65,6 +65,11 @@ function colorCells(row, guessedHero) {
 
   // Check for exact matches (green), partial matches (orange), or no matches (red)
   function colorCell(cell, value, correctValue) {
+    // Ensure both values are arrays before sorting
+    if (!Array.isArray(value)) value = [value]; // Convert value to an array if it's not one
+    if (!Array.isArray(correctValue)) correctValue = [correctValue]; // Convert correctValue to an array if it's not one
+
+    // Now both value and correctValue should be arrays, we can safely use .sort()
     if (JSON.stringify(value.sort()) === JSON.stringify(correctValue.sort())) {
       // Exact match (green)
       cell.style.backgroundColor = 'green';
