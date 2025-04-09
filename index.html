@@ -30,44 +30,21 @@
       margin-top: 20px;
       width: 100%;
       border-collapse: collapse;
+      table-layout: fixed;
     }
 
     th, td {
+      width: 20%;
       border: 1px solid #ccc;
       padding: 8px;
       text-align: left;
+      word-wrap: break-word;
     }
 
     th {
       background-color: #eee;
     }
-table {
-  margin-top: 20px;
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed;
-}
 
-th, td {
-  width: 20%;
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
-  word-wrap: break-word; /* Prevent overflow */
-}
-    /* Style for the current hero answer display */
-    #answerDisplay {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: white;
-      padding: 5px;
-    }
-
-    /* Style for the message below the table */
     #message {
       margin-top: 20px;
       font-size: 18px;
@@ -79,7 +56,6 @@ th, td {
 <body>
 
   <h1>Marvle</h1>
-
 
   <input type="text" id="guessInput" placeholder="Enter your guess">
   <button onclick="submitGuess()">Submit Guess</button>
@@ -99,11 +75,10 @@ th, td {
     </tbody>
   </table>
 
-  <!-- Add this paragraph for displaying messages when the hero is guessed correctly -->
   <p id="message"></p>
 
-  <!-- Link your script.js at the end -->
   <script src="script.js"></script>
 
 </body>
 </html>
+  
