@@ -95,10 +95,10 @@ function colorCells(row, guessedHero) {
     appearanceCell.textContent += ' (same)';
     appearanceCell.style.backgroundColor = 'green';
   } else if (guessedDate < answerDate) {
-    appearanceCell.textContent += ' (earlier)';
+    appearanceCell.textContent += ' (later)';
     appearanceCell.style.backgroundColor = 'orange';
   } else {
-    appearanceCell.textContent += ' (later)';
+    appearanceCell.textContent += ' (earlier)';
     appearanceCell.style.backgroundColor = 'orange';
   }
 }
