@@ -16,12 +16,6 @@ function submitGuess() {
   // If the guess is empty, do nothing
   if (!guess) return;
 
-  // Prevent duplicate guesses
-  if (guesses.includes(guess)) {
-    alert("You've already guessed this hero!");
-    return;
-  }
-
   // Fetch the hero data and process the guess
   fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/data/heroes.json')
     .then(response => response.json())
@@ -47,11 +41,12 @@ function submitGuess() {
         colorCells(newRow, foundHero);
 
         // Add the guess to the guesses array to prevent duplicate guesses
-        guesses.push(guess);
+        guesses.push(foundHero.hero.toLowerCase());
 
         // Check if the guess is correct
         if (foundHero.hero.toLowerCase() === answerHero.hero.toLowerCase()) {
-          alert("Correct! You've guessed the hero!");
+          // Display a message below the table when the hero is guessed correctly
+          document.getElementById('message').textContent = "Correct! You've guessed the hero!";
         }
       } else {
         alert("Hero not found!");
@@ -70,13 +65,10 @@ function colorCells(row, guessedHero) {
 
   // Check for exact matches (green), partial matches (orange), or no matches (red)
   function colorCell(cell, value, correctValue) {
-    const valueArray = Array.isArray(value) ? value : [value];
-    const correctValueArray = Array.isArray(correctValue) ? correctValue : [correctValue];
-
-    if (JSON.stringify(valueArray.sort()) === JSON.stringify(correctValueArray.sort())) {
+    if (JSON.stringify(value.sort()) === JSON.stringify(correctValue.sort())) {
       // Exact match (green)
       cell.style.backgroundColor = 'green';
-    } else if (correctValueArray.some(val => valueArray.includes(val))) {
+    } else if (correctValue.some(val => value.includes(val))) {
       // Partial match (orange)
       cell.style.backgroundColor = 'orange';
     } else {
@@ -99,4 +91,3 @@ fetch('https://raw.githubusercontent.com/ArisePetal/Marvle/main/data/heroes.json
   .catch(error => {
     console.error('Error fetching data:', error);
   });
-
